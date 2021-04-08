@@ -95,11 +95,11 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 /* subsection heading */
 .reveal h3 {
-  margin: 80px 0 40px 0;
+  margin: 20px 0 40px 0;
   color: #471da1;
-  font-size: 1.1em; }
+  font-size: 1.4em; }
 
-/* regular slide heading */
+/* slimmer slide heading for pics etc. */
 .reveal h4 {
   margin: -10px 0 40px 0;
   color: #471da1;
