@@ -620,20 +620,66 @@
 ---
 ### Rechercheaufgabe A: Weitere Aspekte?
 
+
 ---
-### Music Recommender Systeme
-* Was wird empfohlen? 
-  * Einzelne Stücke
-  * Alben
-  * Künstler
-  * Musiksquenzen
-* Auf welcher Grundlage beruht die Empfehlung?
-  * "collaborative filtering"
-  * "content-based"
-    * metadata 
-    * user-generated text
-    * audio-signal
-    * derived features
+### Music Recommender Systeme: Überblick
+* Was wird empfohlen?<br/>(Stücke, Alben, Künstler, Musiksequenzen) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Mit welchem Ziel wird empfohlen?<br/>(Einmaliger Kauf, Verbleib auf der Plattform)  <!-- .element: class="fragment" data-fragment-index="2" -->
+* Auf welchem Prinzip beruht die Empfehlung?<br/>(collaborative filtering vs. content-based recommendation) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Besonderheit Musik: Andere Balance aus Ähnlichkeit und Varianz als bei Büchern, Filmen, Elektronik, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+### Collaborative filtering
+* Prinzip: Verhalten von Nutzendengruppen wird genutzt, um die Interessen von Einzelnutzern zu vorherzusagen <!-- .element: class="fragment" data-fragment-index="1" -->
+* Vorteil: Es ist keine Information über die Produkte nötig (Metadaten, Inhalt, etc.) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Herausforderung: Für neue Nutzende auf einer Plattform kann keine Empfehlung gemacht werden <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+### Vorgehensweise in einzelnen Schritten  
+1. Musikfans auf einer Plattform hören Musikstücke und bewerten sie positiv oder negativ <!-- .element: class="fragment" data-fragment-index="1" -->
+1. Musikfans A,B und C haben viele Stücke ähnlich bewertet <!-- .element: class="fragment" data-fragment-index="2" -->
+1. Musikfans A und B haben das Stück XYZ gehört und positiv bewertet <!-- .element: class="fragment" data-fragment-index="3" -->
+1. Musikfan C hat das Stück XYZ noch nicht gehört <!-- .element: class="fragment" data-fragment-index="4" -->
+1. Die Plattform schlägt Musikfan C das Stück XYZ vor, weil es ihm/ihr vermutlich gefallen wird <!-- .element: class="fragment" data-fragment-index="5" -->
+
+---
+### Content-based recommendation
+* Basiert nicht (nur) auf Nutzendenverhalten, sondern auf Eigenschaften der Produkte (Musikstücke) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Grundlage ist nicht die Ähnlichkeit der Nutzenden, sondern die Ähnlichkeit der Produkte  <!-- .element: class="fragment" data-fragment-index="2" -->
+* Ähnlichkeit wird wie in der Stilometrie bspw. über Nähe im Vektorraum definiert <!-- .element: class="fragment" data-fragment-index="3" -->
+* Vorteil: schon nach einer Entscheidung (Kauf, Bewertung) können Empfehlungen gemacht werden <!-- .element: class="fragment" data-fragment-index="4" -->
+* Herausforderung: man braucht detaillierte Informationen über die Produkte / Musikstücke <!-- .element: class="fragment" data-fragment-index="5" -->
+* Und: Wie schlägt man Nutzenden auch mal etwas Neues, Überraschendes vor? <!-- .element: class="fragment" data-fragment-index="6" -->
+
+---
+### Mögliche Merkmale
+* Metadaten: Künstler, Label, Jahr, Genre <!-- .element: class="fragment" data-fragment-index="1" -->
+* Beschreibungstext: von Label oder Nutzenden <!-- .element: class="fragment" data-fragment-index="2" -->
+* Lyrics (nur möglich wenn vorhanden)  <!-- .element: class="fragment" data-fragment-index="3" -->
+* Audiosignal (ohne weitere Verarbeitung) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Aus dem Audiosignal extrahierte Merkmale (Tonart, Tempo, Instrumente, Komplexität etc.) <!-- .element: class="fragment" data-fragment-index="5" -->
+
+---
+### Beispiel spotify
+<img height="200" data-src="img/spotify.png"></a>
+* Ziel: Sowohl "relevance" als auch "diversity" optimieren <!-- .element: class="fragment" data-fragment-index="1" -->
+* Methode: verschiedenste Informationsquellen <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Nutzendenverhalten (implizit: Listen, Skip, Add to Playlist)
+  * Verhalten ähnlicher Nutzender (collaborative filtering)
+  * verschiedenste Merkmale der gehörten Musik (Lyrics, Playlists, Kommentare, Audio)
+* Wer macht das: ein großes Team von "data scientists" <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+### Lektüreempfehlungen
+<img height="250" data-src="img/weiss.png">
+<small>
+
+* Weiss, Christof, und Meinard Müller. „Tonal complexity features for style classification of classical music“. In ICASSP 2015, 688–92. IEEE, 2015. – Einführend: [Video](https://klartext-preis.de/preistraeger/dr-christof-weiss/).
+* Music Recommender Systems allgemein: Schedl, Markus et al.: „Music Recommender Systems“. In _Recommender Systems Handbook_, herausgegeben von Francesco Ricci, Lior Rokach, und Bracha Shapira, 453–92. Boston, MA: Springer US, 2015. https://doi.org/10.1007/978-1-4899-7637-6_13.
+* Spotify speziell: Sophia Ciocca, "How Does Spotify Know You So Well?", Medium.com, 2017, https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe
+
+</small>
+
 
 
 ---
