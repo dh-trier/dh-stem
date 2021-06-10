@@ -860,10 +860,170 @@ Ich bin der Ansicht teilweise. Zu aller Erst sollte gesagt sein, dass dies ein r
 
 
 
-
-
 --
 ## Thema 6: Textkodierung
+
+---
+### Nachfragen zu: "Datenformate in den DH" (1)
+* Warum gibt es so viele Auszeichnungssprachen / Datenformate?
+* Welche Anwendungsgebiete gibt es jeweils?
+* Was sind die Vorteile der verschiedenen Formate?
+* Wie kann man zwischen den Formaten konvertieren?
+* Wie läuft der Entwicklungsprozess von Auszeichnungssprachen?
+* Wie arbeitet man mit den diversen Datenformaten beim Programmieren?
+* Mehr zu einzelnen Datenformaten:
+
+
+---
+### Warum gibt es so viele Auszeichnungssprachen / Datenformate?
+<img height="450" data-src="img/standards.png">
+<br/>Quelle: https://xkcd.com/927/
+
+---
+### Mehr zu einzelnen Datenformaten:
+* Texte: HTML (mit CSS und JS), Mediawiki, LaTex
+* Bilder: Pixelgrafiken, SVG,
+* Anderes: JSON, MathML, JSON, KML
+* => siehe: [DH-Trier Bibliographie, "Datenformate"](https://www.zotero.org/groups/2162827/dh-bibliographie_trier/collections/WLQCTV7M)
+
+
+---
+### Welche Anwendungsgebiete gibt es jeweils?
+* XML: beliebige semi-strukturierte Daten (Metasprache, sehr mächtig)
+* JSON: beliebige semi-strukturierte Daten
+* CSV: beliebige semi-strukturierte Daten
+* Markdown: (schwach strukturierte) Dokumente (sehr einfach)
+* HTML: (stärker strukturierte) Dokumente (einfach)
+* Mediawiki (recht einfach)
+* LaTex: Dokumente (recht mächtig)
+* BibTex: bibliographische Daten (spezialisiert)
+* KML: geographische Daten (spezialisiert)
+
+
+---
+### Wie kann man zwischen Formaten konvertieren? 
+* Oxgarage (Webservice): https://oxgarage.tei-c.org/
+* pandoc (CL-Tool): https://pandoc.org/
+
+---
+### Verschiedene Datenformate beim Programmieren (Python) 
+* Dictionary (core) <=> JSON 
+* DataFrame (pandas) <=> Tabelle / CSV-Datei
+* XML: lxml
+* CSV: csv 
+* HTML: html
+* SVG/PNG: pygal, matplotlib, seaborn, bokeh...
+* KML: folium etc.
+
+  
+
+---
+### Nachfragen zum Screencast<br/>"Text Encoding Initiative"
+* **Community und Standard-Entwicklung**
+* Kodierungspraxis in TEI und Kodierungs-Schulen
+* Mehr zum teiHeader / zu den verschiedenen Modulen
+* **Wie funktioniert Validierung?**
+* Einsatz-/Anwendungsbeispiele für TEI: für Geisteswissenschaften oder universell
+* Alternativen zu XML-TEI? (HTML)
+* Interoperabilität und Nachnutzbarkeit von TEI?
+* Ausschnitt aus einem Member's Meeting
+* **(Tools für) Editieren, Publizieren, Visualisieren von XML-TEI**
+
+
+
+---
+### Validierung
+<img height="350" data-src="img/bekond.jpg">
+
+* Mehr Informationen: [Screencast "Validierung"](https://video.uni-trier.de/Panopto/Pages/Viewer.aspx?id=8e11903d-800a-437d-85c5-ac840117f733)
+* Beispiel: Projekt "Weinetiketten im Wandel" des TCDH
+
+
+
+---
+### Entwicklung von TEI
+<img height="350" data-src="img/towhom.png">
+
+* Community-basiert; der TEI Technical Council koordiniert
+* Beispiel @toWhom: https://github.com/TEIC/TEI/issues/1679
+
+
+
+---
+### Tools für XML-TEI
+* Editieren
+  * oXygen Editor: https://www.oxygenxml.com/xml_editor/ (auch mit Ediarum Arbeitsumgebung)
+  * Visual Studio Code: https://code.visualstudio.com/ (mit 'Scholarly XML'-Plugin)
+  * jEdit: http://jedit.org/ (mit TEI-Plugin)
+  * Atom: https://atom.io/ (mit XML-Plugins)
+  * TextGrid Lab: https://textgrid.de/
+  * FuD (TCDH + SFB): https://fud.uni-trier.de/
+* Publizieren
+  * Versioning Machine: http://v-machine.org/, bspw: http://v-machine.org/samples/autumn.html
+  * TEI Publisher: https://teipublisher.com, bspw: 
+  * GAMS (Graz Asset Manager): https://gams.uni-graz.at/, bspw: https://gams.uni-graz.at/context:mws/
+  * Spezielle Lösungen mit eXist-Datenbank + Frontend, bspw: DraCor: https://dracor.org/
+
+
+
+
+---
+### Rechercheaufgabe zu den Guidelines der TEI
+1. Mit welchem Element wird ein Seitenumbruch markiert?
+2. Wozu dient das Element "sense"? In welchem Unterkapitel / Kapitel wird es näher beschrieben, und worum geht es dort allgemein?
+3. Mit welchem Element, mit welchen Elementen, oder mit welcher Kombination von Elementen und Attributen würden Sie den Namen einer Person in einem Text auszeichnen?
+4. Worin liegen die Unterschiede zwischen dem Element "said" und dem Element "quote"?
+5. Angenommen, Sie möchten einen Brief kodieren. Welche dafür speziell geeigneten Elemente finden Sie in den Guidelines? Wie haben Sie diese identifiziert?
+
+
+
+---
+### Element für Seitenumbruch?
+* `<pb>` weist auf den Anfang einer neuen Seite hin. 
+* Dort kann man dann noch @break, @ed oder @edRef anhängen.
+
+---
+### Wozu dient das Element "sense"? 
+* Siehe Kapitel 9.2 "The Structure of Dictionary Entries"
+* `<sense>` sammelt alle Informationen einer Wortbedeutung in einem Lexikoneintrag, beispielweise Definitionen, Beispiele oder Übersetzungsalternativen. 
+
+---
+### Namen einer Person in einem Text auszeichnen?
+* Siehe Kapitel 13.2.1 Personal Names
+* `<persName>` beinhaltet Strings, die sich auf die Person (Name, Vorname, Titel etc.) beziehen
+* Darin Unterscheidungen: `<surname>`, `<forename>`, `<roleName>`, `<genName>` (generational name component)
+* Alternative: `<name type="person"/>`
+
+---
+### Unterschiede zwischen "said" und "quote"?
+* `<said>`
+  * direkte Rede oder Gedanken einer Person im Text
+  * Attribute: @aloud und @rend
+* `<quote>` 
+  * für Zitate
+  * keine besopnderen Attribute werden verwendet
+
+---
+### Kodieren eines Briefs?
+* Kapitel [4.2 "Elements Common to All Divisions"](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB)
+  * `<opener>`
+  * `<closer>`
+  * `<dateline>`
+  * `<signed>`
+* Kap. 10.7 "Physical Description"
+  * `<physDesc>`
+* Kap. 11.3.2.1 "Document Hands":
+  * `<handNote>`
+  * `<handShift>`
+
+
+
+
+
+
+
+
+
 
 
 --
