@@ -1019,15 +1019,146 @@ Ich bin der Ansicht teilweise. Zu aller Erst sollte gesagt sein, dass dies ein r
 
 
 
-
-
-
-
-
-
-
 --
 ## Thema 7: Topic Modeling
+
+
+---
+### Fragen zu "Signs at 40"
+1. Wie heißt die Autorin des Artikels, in dem das Topic mit dem Label "Latin America" wichtiger ist als in allen anderen Artikeln?
+2. Welche beiden Topics sind in der Zeitschrift Signs insgesamt am wichtigsten?
+2. In welchen Topics spielt das Wort "technology" eine Rolle?
+3. Welche 2-3 Topics verlieren in der Zeitschrift ab den 1990er Jahren besonders deutlich an Wichtigkeit? Welche 2-3 Topics gewinnen ab den 1990er Jahren an besonders deutlich an Wichtigkeit?
+
+
+---
+#### 1. Wie heißt die Autorin des Artikels, in dem das Topic mit dem Label "Latin America" wichtiger ist als in allen anderen Artikeln?
+* "Die Autorin heißt Marysa Navarro. Ich habe sie gefunden, indem ich in der Übersicht auf den Kreis geklickt habe, indem Latin größer geschrieben ist als der Rest."
+
+---
+#### 2. Welche beiden Topics sind in der Zeitschrift Signs insgesamt am wichtigsten?
+* "Die beiden Topics "the social" und "Women's role" sind insgesamt am bedeutendsten, da sie in der Topics List bei Ordnung nach größter Proportion der Topics die beiden größten sind. 
+
+---
+#### 3. In welchen Topics spielt das Wort "technology" eine Rolle?
+* "Technology" spielt besonders bei "Information Technology", "Domestic and Urban" und bei "Science" eine Rolle. Man findet die Antwort über den "Word"-Index, wenn man dort "technology" eingibt. 
+
+---
+#### 4. Welche 2-3 Topics verlieren, welche gewinnen, in der Zeitschrift ab den 1990er Jahren besonders deutlich an Wichtigkeit? 
+* Die Topics "Quantitative Methods", "Psychology and women" und "Labor" verlieren ab den 90er Jahren an Wichtigkeit. * Die Topics "Politics of difference", und "Globalization" hingegen nehmen seit den 90er Jahren an Wichtigkeit zu. 
+* Zu erkennen ist dies bei Overview unter dem Reiter "Topics over time".
+
+
+
+
+---
+### Rückfragen zum Topic Modeling (1)
+* (Wie funktioiniert) Latent Dirichlet Allocation?
+* (Wie funktioniert) die iterative Zuordnung von Wörtern zu Topics (= Gibbs Sampling)
+* Was hat es genau mit der Bayes'schen Statistik auf sich?
+* Kann man Topic Modeling auch mit Lyrik, auf Audio-, Bild- oder Videodaten anwenden? (Ja!)
+* Erkennung von Sarkasmus oder Parodien
+* Erkennung von Zweideutigkeiten / versteckten Emotionen mit TM?
+* TM mit kleinerer Textsammlung? (möglich mit vorhandenem Modell)
+
+---
+### Rückfragen zum Topic Modeling (2)
+* Verhältnis qualitative Inhaltsanalyse zu Topic Modeling
+* Mehrwert einer solchen Analyse gegenüber Inhaltsanalyse?
+* Dokumente x Topics und Topics x Wörter
+* Explorative Visualisierung 
+* Andere Programme außer Mallet und gensim?
+* Wie wird die optimale Anzahl an Topics festgelegt? 
+* Topic Modeling Workflow an einem Beispiel
+* Wie funktioniert die Evaluation genau?
+
+
+
+---
+### Inferenz-Problem (1)
+<img height="400" data-src="img/tm_blei_observed.png">
+<br/>(Dokumente; Blei 2012)
+
+---
+### Inferenz-Problem (2)
+<img height="400" data-src="img/tm_blei_model.png">
+<br/>(Topics und Wörter; Blei 2012)
+
+
+---
+### Topic Modeling ("plate notation")
+<img height="400" data-src="img/tm_lda-1000.png">
+<br/>(Wörter, Topics, Dokumente, Hyperparameter)
+
+---
+### Dirichlet Distributions
+<img height="350" data-src="img/tm_dirichlet3.png">
+<br/>(Serrano 2020)
+
+
+---
+### Gibb's Sampling (1)
+<img height="400" data-src="img/tm_steyvers1.png">
+<br/>(Missing Assignments; Steyvers and Griffith 2012)
+
+---
+### Gibb's Sampling (2) 
+<img height="400" data-src="img/tm_steyvers2.png">
+<br/>(Estimated Assignments; Steyvers and Griffith 2012)
+
+
+---
+### Video-Empfehlung
+<img height="200" data-src="img/tm_dirichlet3.png">&nbsp;&nbsp;&nbsp;<img height="200" data-src="img/tm_docs-and-words.png">
+* (1) Luis Serrano: "Latent Dirichlet Allocation",<br/>https://www.youtube.com/watch?v=T05t-SqKArY 
+* (2) Luis Serrano: "Gibbs Sampling",<br/>https://www.youtube.com/watch?v=BaM1uiCpj_E
+
+
+
+---
+### Anwendungsszenarios für TM
+
+
+---
+### Stephen King
+>Da ich großer Fan von Stephen King bin und auch einige seiner Romane besitze, könnte ich mir im Vergleich der einzelnen Werke mithilfe des Topic Modeling durchaus interessante Ergebnisse vorstellen. Beispielsweise könnte so ermittelt werden, welche Themen in welchen Büchern eine größere Rolle spielen, eventuell auch von solchen, von denen man es gar nicht erwarten würde. Da in Kings Werken hinzukommend viele Geschichten Anspielungen auf andere Romane von ihm machen oder auch dieselben Orte/Szenarien verwendet werden, könnte man auch in dieser Hinsicht neue Erkenntnisse gewinnen, was ich mir sehr spannend vorstelle.
+
+---
+### Liedtexte
+>Welche Topics sind am Häufigsten/Wichtigsten in den Liedtexten der deutschen Charts zum Beispiel im Zeitraum des letzten Jahres und gibt es einen signifikanten Anteil an Topics mit zum Beispiel diskriminierenden oder stigmatisierendem Vokabular.
+
+---
+### Twitter
+>Ich fände es interessant zu sehen was heraus kommt, wenn man zum einen, ganz twitter analysiert und die Ergebnisse dann mit Analysen kleinerer Nutzergruppen (beispielsweise aufgeteilt nach Ethnischer Zugehörigkeit oder Altersgruppe) vergleicht. Inwiefern unterscheiden sich die Twitter Tonics unterschiedlicher Altersgruppen?
+
+
+---
+### Elektromobilität in der Presse
+>Verschiedene Zeitungen danach zu untersuchen, wie sich die Berichterstattung über Elektroautos über die Jahre verändert hat und inwiefern diese im Zeitverlauf an Relevanz gewonnen haben. Hierbei könnte man ein Topic "Elektroautos" modellieren, welches Wörter wie zum Beispiel "Stromer", "Elektrofahrzeug", "Lithium-Ionen-Batterie", "Emissionsfreiheit", etc. enthält und würde als Textsammlung alle Artikel deutschsprachiger Zeitungen ab dem Jahr 2000 (beispielsweise) nehmen. Anschließend würde man die einzelnen Artikel danach analysieren, ob die Wörter aus dem Topic in den Artikeln vorkommen und könnte dann feststellen, zu welchen Zeitpunkten die Berichterstattung über Elektroautos zu- oder abgenommen hat. [...] Diese Erkenntnisse könnte man dann mit zu dieser Zeit aktuellen Ereignissen in der E-Mobilitätsbranche in Verbindung setzen.
+
+
+---
+### Bundestagsreden
+>Das übergeordnete Ziel besteht in der Extraktion politischer Positionierungen der Parteien im Bundestag und dem Vergleich dieser Positionen. Zu diesem Zweck werden die vom Bundestag online zur Verfügung gestellten Plenarprotokolle weiter aufbereitet und mittels Topic-Modeling-Verfahren untersucht. Zunächst soll mittels politikwissenschaftlicher Literatur ein theoretischer Rahmen erstellt werden, der als Basis für die Hypothesenbildung der politischen Positionsentwicklung der Parteien dient. Aus den ungenügend strukturierten Protokollen soll anschließend ein einheitlich ausgezeichneter, in Parteien aufgeteilter Datensatz entstehen, aus dem mittels Topic-Modeling die wichtigsten epochalen und parteilichen Themen herausgefiltert werden. [...] Abschließend erfolgt ein Abgleich mit dem theoretischen Rahmen und die Beantwortung der Frage, ob eine automatische Ermittlung politischer Tendenzen mit den angewendeten Verfahren einen Gewinn für die Forschung darstellen kann.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --
