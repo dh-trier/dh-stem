@@ -1159,10 +1159,165 @@ Ich bin der Ansicht teilweise. Zu aller Erst sollte gesagt sein, dass dies ein r
 
 
 
-
-
 --
 ## Thema 8: Linked Open Data
+
+
+---
+### Lektüreaufgabe (Tutorial)
+* Bitte arbeiten Sie das folgende Tutorial zu "Linked Open Data" sorgfältig durch. 
+* Es ist Teil der Plattform "The Programming Historian", richtet sich aber nicht nur an Historier:innen. 
+* Hier der Link: https://programminghistorian.org/en/lessons/intro-to-linked-data
+* Wir werden in der Sitzung offene gebliebene Fragen besprechen, bitte notieren Sie diese daher wie gewohnt als Lösung zu dieser Aufgabe.
+
+
+---
+### Nachfragen (1): Grundlagen
+* Was sind konkrete Anwendungsszenarien für LOD?
+* Was genau ist der Unterschied zwischen URL und URI?
+* Warum verwendet man Triples (Subjekt-Prädikat-Objekt)?
+* Was sind RDF/XML und Turtle?
+* Was ist ein SPARQL-Endpoint?
+* Worin liegt der Unterschied zwischen Wissensgraph und Ontologie?
+* Wie kann man die Beziehung zwischen Wikipedia und Wikidata beschreiben?
+* Was ist das "5-star-rating-system" von Tim Berners-Lee?
+* Wie funktioniert das "semantic reasoning"?
+
+
+---
+### Was sind konkrete Anwendungsszenarien für LOD?
+* In den Digital Humanities
+  * Digitale Literaturgeschichte: Projekt "Mining and Modeling Text" 
+  * Kulturelles Erbe: Weinetiketten im Wandel
+  * Digitale Edition: Modellierung von Korrespondenz-Netzwerken
+  * Computerlinguistik: Repräsentation enzyklopädisches Weltwissen für NLP-Tasks
+  * uvm. 
+* Allgemein gesprochen
+  * Wenn eine relationale Datenbank zu unflexibel wäre
+  * Wenn die Daten auch über den eigenen Bestand hinaus vernetzt werden sollen
+
+
+---
+### Von Triples zum Netzwerk
+<img height="500" data-src="img/network-of-information.png">
+
+
+---
+### Was genau ist der Unterschied zwischen URL und URI?
+* URL
+  * Uniform Resource Locator (Link)
+  * Nur für Webseiten und Ähnliches (HTTP, FTP, MAILTO)
+  * Siehe: https://de.wikipedia.org/wiki/Uniform_Resource_Locator
+* URI
+  * Uniform Resource Identifier
+  * Zur Identifikation beliebiger Entitäten, Konzepte, Gegenstände
+  * Häufig in Form einer URL, die aber nicht auf eine HTML-Seite zeigen muss
+* URLs sind eine Teilmenge der URIs
+
+
+---
+### Wo findet man Ontologien und Identifier?
+* Ontologien: https://lov.linkeddata.es/dataset/lov/
+* Identifier: Bibliotheken und Services
+* Personen: 
+  * Gemeinsame Normdatendatei (GND)
+  * Virtual Authority File (VIAF) 
+* Orte
+  * Getty Thesaurus of Geographical Names (TGN)
+  * Geonames.org
+* Dokumente
+  * Digital Object Identifier (und: GND, ISBN)
+Allgemein 
+  * Wikidata (inkl. viele Verweise auf andere URIs)
+
+---
+### Warum verwendet man Triples (Subjekt-Prädikat-Objekt)?
+* Ziel ist es, alle Informationen auf eine bestimmte Relation zwischen einer Entität und einer anderen Entität oder einem Wert zu reduzieren
+* Einfaches Beispiel
+  * Entität 1 = Subjekt, bspw. "Karl Marx"
+  * Relation = Prädikat, bspw. "geboren in" oder "geboren am"
+  * Entität 2 / Wert = Objekt, bspw. "Trier" (Entität) oder "5.5.1818" (Wert)
+* Man kann mit dieser einfachen Struktur fast alle Informationen ausdrücken
+* Voraussetzung ist, dass geeignete Begriffe für die Relationen verfügbar sind (siehe Ontologie)
+
+
+---
+### Was sind RDF/XML und Turtle?
+* RDF 
+  * Resource Description Framework: abstraktes Datenmodell für LOD
+  * Regeln: u.a.: Statements sind Tripel aus Subjekt, Prädikat, Objekt
+  * Oder: 
+* RDF-Serialisierungen
+  * RDF/XML: Triples in XML ausgedrückt; validierbar
+  * Turtle: Kompakte Schreibweise für Triples
+
+
+---
+### Beispiel: RDF/XML vs. Turtle
+<img height="400" data-src="img/rdfxml-turtle.png">
+
+
+---
+### Worin liegt der Unterschied zwischen Wissensgraph und Ontologie?
+* Wissensgraph
+  * Wissensgraph ist ein anderer Begriff für einen LOD-Datenbestand
+  * Aus einer Menge von LOD-Triples entsteht ein Netzwerk von Informationen
+  * Das Wort "Graph" in Wissensgraph bezieht sich auf die Netzwerkstruktur
+* Ontologie
+  * Eine Ontologie ist eine organisierte Menge definierter Begriffe, die eine Domäne abbilden
+  * Beispiel für Entität "Person": Geschlecht, Geburtsort, Geburtstag, Sterbeort, Sterbetag, Tätigkeit, Vater, Mutter, Kind(er). 
+* Fazit: Ontologien sind die semantische Grundlage für Wissensgraphen
+
+
+---
+### Wie kann man die Beziehung zwischen Wikipedia und Wikidata beschreiben?
+* Wikipedia ist menschenlesbar, Wikidata ist maschinenlesbar
+* Wikipedia gibt es in vielen Sprachen; Jede Wikidata-Seite ist mehrsprachig
+* Wikidata enthält Informationen aus Wikipedia in strukturierter Form
+* Beispiel Karl Marx: 
+  * Wikipedia: https://de.wikipedia.org/wiki/Karl_Marx
+  * Wikidata: https://www.wikidata.org/wiki/Q9061
+
+
+---
+### Was ist das "5-star-rating-system"<br/>von Tim Berners-Lee?
+* 5 Kriterien für gute Linked Open Data
+  * ★ Available on the web with an open licence
+  * ★★ 	In addition, available as machine-readable, structured data
+  * ★★★ In addition, using a non-proprietary format
+  * ★★★★ In addition, using open standards from W3C (like RDF)
+  * ★★★★★ In addition, link your data to other people's data
+* Siehe: https://www.w3.org/DesignIssues/LinkedData.html
+
+
+---
+### Was ist ein SPARQL-Endpoint?
+* Ein SPARQL-Endpoint ist eine Abfragemöglichkeit für einen LOD-Datenbestand
+* SPARQL ist eine Abfragesprache für LOD-Daten
+* In SPARQL kann man sehr präzise Abfragen formulieren (siehe unten)
+
+
+
+---
+### Lektüreempfehlung
+<img height="300" data-src="img/dengel.jpg">
+<br/>
+
+Andreas Dengel (Hg.): Semantische Technologien. Grundlagen. Konzepte. Anwendungen. Spektrum Verlag, 2012. 
+
+
+---
+### SPARQL ausprobieren
+<a href="https://query.wikidata.org/#select%20distinct%20%3Fitem%20%3FitemLabel%20%3FitemDescription%20where%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ5%3B%20%20%23%20instance%20of%2C%20human%0A%20%20%20%20%20%20%20%20%20%20wdt%3AP19%20wd%3AQ3138%3B%20%20%23%20%20born%20in%2C%20Trier%20%0A%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22de%22%20%7D%0A%7D%0A"><img height="500" data-src="img/sparql.png"></a>
+
+* Siehe "Examples": auswählen und abwandeln!
+
+
+
+
+
+
+
 
 
 --
